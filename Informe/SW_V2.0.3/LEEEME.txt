@@ -1,0 +1,9 @@
+Carpeta "Diagramas relevantes"
+	Encontramos los circuitos para hardware arduino uno y arduino mega
+Carpeta "gui"
+	Encontramos la interfaz grafica realizada para el proyecto
+Carpeta "v1" 
+	Encontramos subcarpetas las cuales son:
+		"arduino_mega" contiene las clases necesarias para ser cargadas en arduino mega
+		"arduino_uno" contiene las clases necesaria para ser cargadas en arduino uno
+		"socket" contiene el programa para ejecutar el servidor

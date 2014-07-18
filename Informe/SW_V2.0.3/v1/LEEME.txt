@@ -1,0 +1,8 @@
+Antes de iniciar la compilacion de los programas
+debe indicar el nombre de la base de datos si esta
+ha cambiado.
+	1.-Para ello dirigase al archivo de server.c y modifique
+	en funcion sql los requerimientos  nuevos para conectar y 
+	ejecutar query.
+	2.-Dirigase a ventana.cpp en carpeta gui ubicada un nivel atras
+	y modifique los parametros de conexion a una base de dato

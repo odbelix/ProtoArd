@@ -1,0 +1,70 @@
+
+
+/**************PINES_CONFIGURACION*****************************************************/
+
+SENSORES:
+	TEMPERATURA --->A0
+	TEMPERATURA2---->A1
+	NIVEL---->A4
+	FLUJO---->2
+	HUMEDAD--->A3
+	RELE---->4
+
+
+TARJETA SD
+	pin 8 para iniciar SD
+	pin 10 escritura
+	pin 9 alerta de escritura
+
+COMUNICACION SERIAL
+	pin 0 y 1 comunicacion PC serial
+
+PIN DE RESET
+	pin 7 reset
+
+/**************FIN_PINES_CONFIGURACION*************************************************/
+
+
+
+
+
+/**************PINES_ALERTAS***********************************************************/
+Error Lista
+	pin 5
+		TIPO DE ERROR;
+					1 UN PESTAÑEO INTERMITENTE CADA 250 MILISEGUNDOS ---> Error en Memoria (Capacidad max alcanzada)
+
+TARJETA SD
+			pin 9 alerta de escritura					
+			pin 6 error sd	
+ALMACEN
+			pin 3 insercion en lista
+
+/**************FIN_PINES_ALERTAS*******************************************************/
+
+
+PINES DIGITALES
+0 TX
+1 RX
+2 FLUJO
+3 LED VERDE INSERCION LISTA
+4 RELE
+5 LED ROJO ERROR LISTA
+6 LED BLANCO error sd
+7 PUENTE RESET
+8 SD
+9 LED PLOMO ALERTA ESCRITURA SD
+10 SD
+11 SD
+12 SD 
+13 SD 
+
+
+PINES ANALOGOS
+A0 TEMPERATURA
+A1 TEMPERATURA2
+A2 
+A3 HUMEDAD
+A4 NIVEL
+A5
+

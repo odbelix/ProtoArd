@@ -1,0 +1,17 @@
+SOFTWARE WSN
+Sensores incluidos:
+	Temperatura
+	Flujo
+	Humedad
+	Nivel
+Mejoras:
+	Alerta en HW sobre errores
+	Se agrega nota con los pines utilizados en cada placa
+    Control sobre RELE de manera directa
+
+
+A mejorar:
+	Coordinacion entre las placas
+	Enviar alerta entre las placas si algo falla, ya que hasta ahora es solo de manera local.
+	
+	

@@ -1,0 +1,123 @@
+
+
+/**************PINES_CONFIGURACION*****************************************************/
+
+TARJETA SD
+	pin 4 para iniciar SD
+	pin 10 escritura
+
+COMUNICACION SERIAL
+	pin 13 y 14 comunicacion XBEE serial3
+	pin 0 y 1 comunicacion PC serial
+	pin 15 y 16 comunicacion serial2
+	pin 17 y 18 comunicacion serial1
+
+Ethernet Shield
+	pin 10 habilitar y Deshabilitar w5100
+
+Reloj RTC
+	pin 20 y 21 
+	pin 7 (REVISAR)
+
+/**************FIN_PINES_CONFIGURACION*************************************************/
+
+
+
+
+
+/**************PINES_ALERTAS***********************************************************/
+Error SD
+	pin 2 LED ROJO
+		TIPO DE ERROR;
+					1 UN PESTAÑEO INTERMITENTE CADA 1 SEGUNDO ---> Error en Escritura
+					2 DOS PESTAÑEO INTERMITENTE CADA 1 SEGUNDO ---> Error Iniciando SD
+
+Error COMANDO
+	pin 3 LED VERDE
+		Error en scanner
+						Enciende led verde en pin 3 por 3 segundos
+ERROR ETHERNET
+	pin 5 LED NARANJA
+		TIPO DE ERROR:
+					1 UN PESTAÑEO DE 5 SEGUNDO ----> Error iniciando red
+					2 TRES PESTAÑEO INTERMITENTES ---> Error al enviar por red
+/**************FIN_PINES_ALERTAS*******************************************************/
+
+
+PINES DIGITALES
+0 TX
+1 RX
+2 LED ROJO ERROR SD 
+3 LED NARANJA ERROR SCANNER
+4 
+5 LED AMARILLO ERROR RED
+6
+7
+8
+9
+10 Escritura SD// w5100
+11 SD
+12 SD
+13 SD
+14TX TX3
+15RX RX3
+16TX TX2
+17RX RX2
+18TX TX1
+19RX RX1
+20 SDA-->A4
+21 SCL-->A5
+22 
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+GND1
+GND2
+GND3
+GND4
+GND5
+RESET
+
+PINES ANALOGOS
+A1
+A2
+A3
+A4 SDA-->20
+A5 SCL-->21
+A6
+A7
+A8
+A9
+A10
+A11
+A12
+A13
+A14

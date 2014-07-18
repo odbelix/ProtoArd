@@ -1,0 +1,1 @@
+g++ ventana.h ventana.cpp main.cpp comunicacion.cpp comunicacion.h -o Red_Sensores `pkg-config gtkmm-3.0 --cflags --libs` -lserial `mysql_config --cflags --libs`

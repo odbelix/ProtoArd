@@ -1,0 +1,2222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:date="http://exslt.org/dates-and-times">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+              This file is generated from xml source: DO NOT EDIT
+      -->
+    <title>Prototipo Red Sensores - Planner</title>
+    <meta name="GENERATOR" content="Planner HTML output" />
+    <style type="text/css">
+
+/* CSS Stylesheet for Planner HTML output.
+ * 
+ * Copyright (C) 2004-2005 Imendio AB
+ * Copyright (C) 2003 CodeFactory AB
+ * Copyright (C) 2003 Daniel Lundin (daniel@edgewall.com)
+ * Copyright (C) 2004 Chris Ladd (caladd@particlestorm.net)
+ */
+
+/*
+ * Fonts 
+ */
+html,body,table { 
+ font-family: "Bitstream Vera Sans", helvetica, Arial, sans-serif;
+ font-size: 12px;
+ white-space: nowrap;
+}
+
+tr,td,th,table,font,span,div,h1,h2,h3 {
+ font-family: "Bitstream Vera Sans", helvetica, Arial, sans-serif;
+}
+
+h1 {
+ font-size: 16px;
+}
+
+h2 {
+ font-size: 12px;
+ margin-bottom: 2px;
+}
+
+div.separator {
+ margin: 1em;
+}
+
+/*
+ * Header
+ */
+table.proj-header {
+ border: 0;
+ margin: 0;
+ width: auto;
+}
+
+table.proj-header .header {
+ font-weight: bold;
+}
+
+/*
+ * Footer
+ */
+.footer {
+ float: left;
+ width: 100%;
+ margin-top: 50px;  
+ padding-top: 2px;
+ border-style: dotted;
+ border-width: 1px 0 0 0;
+ border-color: #999;
+ font-size: 9px;
+ text-align: right;
+ clear: both;
+ color: #666;
+}
+
+a:link, a:visited {
+ text-decoration: none;
+ color: #666;
+}
+
+a:hover[href] {
+ text-decoration: underline;
+}
+
+
+/*
+ * Layout
+ */
+
+.gantt, .gantt-tasklist, .gantt-chart, .tasklist, .resourcelist {
+ float: left;
+}
+
+.gantt-tasklist, .gantt-chart, .tasklist-table, .resourcelist-table {
+ border-style: solid;
+ border-width: 1px;
+ border-color: #aaa;
+}
+
+.gantt-tasklist, .gantt-chart, .tasklist, .resourcelist {
+ overflow: auto;
+}
+
+.gantt, .tasklist, .resourcelist {
+  clear: both;
+  width: 100%;
+}
+
+.gantt-tasklist {
+ border-width: 1px 0px 1px 1px;
+ width: 30%;
+}
+
+.gantt-chart {
+ border-color: #aaa #aaa #aaa #fff;
+ width: 69.5%;
+}
+
+.tasklist, .resourcelist {
+ clear: left;
+}
+
+table {
+ width: 100%;
+ border-collapse: collapse;
+ border-style: none;
+ border-color: #fff;
+ white-space: nowrap;
+ margin: 0;
+}
+
+tr, td, th {
+ white-space: nowrap;
+ vertical-align: top;
+ padding-top: 1px;
+ padding-bottom: 1px;
+}
+
+th {
+ vertical-align: top;
+}
+
+tr {
+ height: 1.5em;
+}
+
+tr.header {
+ background-color: #aaa;
+ color: #fff;
+}
+
+tr.even {
+ background-color: #eee;
+}
+
+tr.odd {
+ background-color: #fff;
+}
+
+th span, td span {
+ margin-left: 6px;
+ margin-right: 6px;
+}
+
+th.note {
+ min-width: 20em;
+}
+
+td.note {
+ white-space: normal;
+}
+
+/*
+ * Gantt
+ */
+div.gantt-empty-begin, div.gantt-empty-end, div.gantt-complete-done, div.gantt-complete-notdone, div.gantt-summary {
+ overflow: hidden;
+ clear: none;
+ float: left; 
+ height: 0.75em;
+ margin-top: 0.15em;
+ margin-bottom: 0;
+}
+
+div.gantt-complete-done {
+ background-color: #495f6b;
+ height: 0.75em;
+ margin-top: 0;
+ margin-bottom: 0;
+}
+
+div.gantt-complete-notdone {
+ background-color: #8db6cd;
+ border-style: solid;
+ border-width: 1px;
+}
+
+div.gantt-summary {
+ height: 0.3em;
+ margin-top: 0.25em;
+ border-bottom: 2px dashed #000;
+}
+
+div.gantt-empty-end {
+ margin-left: 0;
+}
+
+div.gantt-milestone {
+ float: left;
+ font-size: 0.9em;
+ color: #000000;
+ position: relative;
+ margin-left: 0;
+ margin-right: 0;
+}
+
+div.gantt-resources {
+ float: left;
+ margin-left: 0.5em;
+ white-space: nowrap;
+}
+
+th.gantt-1day-header {
+  width: 19px;
+}
+
+th.gantt-2day-header {
+  width: 39px;
+}
+
+th.gantt-3day-header {
+  width: 59px;
+}
+
+th.gantt-4day-header {
+  width: 79px;
+}
+
+th.gantt-5day-header {
+  width: 99px;
+}
+
+th.gantt-6day-header {
+  width: 119px;
+}
+
+th.gantt-week-header, .gantt-resources {
+ width: 139px;
+}
+
+th.gantt-day-header {
+ margin: 0;
+ padding-top: 1px;
+ padding-bottom: 1px;
+ width: 19px;
+}
+
+</style>
+<!--[if IE]><style type="text/css">
+
+/* IE specific overrides to compensate for the different box model used by IE
+ * (see http://en.wikipedia.org/wiki/Internet_Explorer_box_model_bug)
+ */
+
+.gantt-resources {
+  overflow: hidden;
+}
+
+
+.tasklist, .resourcelist {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 1em;
+}
+
+
+.gantt-tasklist, .gantt-chart {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+
+.gantt-chart {
+  padding-bottom: 1px;
+}
+
+
+
+.tasklist-table, .resourcelist-table {
+  width: 99.8%;
+}
+
+/*
+div.gantt-empty-begin, div.gantt-empty-end, div.gantt-complete-done, div.gantt-complete-notdone, div.gantt-summary {
+ height: 1.75em;
+}
+
+div.gantt-complete-done {
+ height: 0.75em;
+}
+
+div.gantt-summary {
+ height: 0.3em;
+}
+*/
+th.gantt-1day-header {
+  width: 20px;
+}
+
+th.gantt-2day-header {
+  width: 40px;
+}
+
+th.gantt-3day-header {
+  width: 60px;
+}
+
+th.gantt-4day-header {
+  width: 80px;
+}
+
+th.gantt-5day-header {
+  width: 100px;
+}
+
+th.gantt-6day-header {
+  width: 120px;
+}
+
+th.gantt-week-header {
+ width: 140px;
+}
+
+th.gantt-day-header {
+ width: 20px;
+}
+
+</style><![endif]-->
+<!--[if gte IE 7]><style type="text/css">
+
+.gantt-chart {
+  padding-bottom: 0px;
+}
+
+</style><![endif]-->
+  </head>
+  <body>
+    <h1 class="proj-title">
+      <a name="project" id="project">Prototipo Red Sensores</a>
+    </h1>
+    <table class="proj-header">
+      <tr>
+        <td class="header">Inicio:</td>
+        <td>30 enero, 2014</td>
+      </tr>
+      <tr>
+        <td class="header">Fin:</td>
+        <td>6 marzo, 2014</td>
+      </tr>
+      <tr>
+        <td class="header">Fecha de informe:</td>
+        <td>30 enero, 2014</td>
+      </tr>
+    </table>
+    <div class="separator"></div>
+    <div class="gantt">
+      <h2>
+        <a name="gantt" id="gantt">Gráfica Gantt</a>
+      </h2>
+      <div class="gantt-tasklist">
+        <table cellspacing="0" cellpadding="0" border="1">
+          <tr class="header" align="left">
+            <th>
+              <span>WBS</span>
+            </th>
+            <th>
+              <span>Nombre</span>
+            </th>
+            <th>
+              <span>Trabajo</span>
+            </th>
+          </tr>
+          <tr class="header">
+            <th> </th>
+            <th> </th>
+            <th> </th>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1</span>
+            </td>
+            <td>
+              <a name="task-1" style="white-space: nowrap; font-weight: bold; margin-left: 0px;" id="task-1">
+                <span>Prototipo 2 Etapa</span>
+              </a>
+            </td>
+            <td>
+              <span style="white-space: nowrap; font-weight: bold;">41d 6h </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.1</span>
+            </td>
+            <td>
+              <a name="task-2" style="white-space: nowrap; font-weight: bold; margin-left: 18px;" id="task-2">
+                <span>Construccion Base de Datos </span>
+              </a>
+            </td>
+            <td>
+              <span style="white-space: nowrap; font-weight: bold;">3d </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.1.1</span>
+            </td>
+            <td>
+              <a name="gantt-3" style="white-space: nowrap; margin-left: 36px;" id="gantt-3">
+                <span>Esquema de Base de Datos</span>
+              </a>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.1.2</span>
+            </td>
+            <td>
+              <a name="gantt-4" style="white-space: nowrap; margin-left: 36px;" id="gantt-4">
+                <span>Codificación Base de Datos</span>
+              </a>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.1.3</span>
+            </td>
+            <td>
+              <a name="gantt-5" style="white-space: nowrap; margin-left: 36px;" id="gantt-5">
+                <span>Pruebas Base de Datos</span>
+              </a>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.2</span>
+            </td>
+            <td>
+              <a name="task-6" style="white-space: nowrap; font-weight: bold; margin-left: 18px;" id="task-6">
+                <span>Analisis Servicio Web</span>
+              </a>
+            </td>
+            <td>
+              <span style="white-space: nowrap; font-weight: bold;">2d </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.2.1</span>
+            </td>
+            <td>
+              <a name="gantt-7" style="white-space: nowrap; margin-left: 36px;" id="gantt-7">
+                <span>Determinar Metodología de Trabajo</span>
+              </a>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.2.2</span>
+            </td>
+            <td>
+              <a name="gantt-8" style="white-space: nowrap; margin-left: 36px;" id="gantt-8">
+                <span>Esquema de Trabajo Servicio Web</span>
+              </a>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.3</span>
+            </td>
+            <td>
+              <a name="task-9" style="white-space: nowrap; font-weight: bold; margin-left: 18px;" id="task-9">
+                <span>Construccion Servicio Web</span>
+              </a>
+            </td>
+            <td>
+              <span style="white-space: nowrap; font-weight: bold;">1d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.3.1</span>
+            </td>
+            <td>
+              <a name="gantt-10" style="white-space: nowrap; margin-left: 36px;" id="gantt-10">
+                <span>Codificación Servicio Web</span>
+              </a>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.4</span>
+            </td>
+            <td>
+              <a name="task-11" style="white-space: nowrap; font-weight: bold; margin-left: 18px;" id="task-11">
+                <span>Prueba Transferencia de Datos</span>
+              </a>
+            </td>
+            <td>
+              <span style="white-space: nowrap; font-weight: bold;">9d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.4.1</span>
+            </td>
+            <td>
+              <a name="gantt-12" style="white-space: nowrap; margin-left: 36px;" id="gantt-12">
+                <span>Esquema de Pruebas</span>
+              </a>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.4.2</span>
+            </td>
+            <td>
+              <a name="gantt-13" style="white-space: nowrap; margin-left: 36px;" id="gantt-13">
+                <span>Ejecución de Pruebas</span>
+              </a>
+            </td>
+            <td>
+              <span>3d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.4.3</span>
+            </td>
+            <td>
+              <a name="gantt-14" style="white-space: nowrap; margin-left: 36px;" id="gantt-14">
+                <span>Recopilación información pruebas</span>
+              </a>
+            </td>
+            <td>
+              <span>3d </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.4.4</span>
+            </td>
+            <td>
+              <a name="gantt-15" style="white-space: nowrap; margin-left: 36px;" id="gantt-15">
+                <span>Retroalimentación</span>
+              </a>
+            </td>
+            <td>
+              <span>2d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.5</span>
+            </td>
+            <td>
+              <a name="task-16" style="white-space: nowrap; font-weight: bold; margin-left: 18px;" id="task-16">
+                <span>Analisis Shield Ethernet Arduino</span>
+              </a>
+            </td>
+            <td>
+              <span style="white-space: nowrap; font-weight: bold;">3d </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.5.1</span>
+            </td>
+            <td>
+              <a name="gantt-17" style="white-space: nowrap; margin-left: 36px;" id="gantt-17">
+                <span>Reconocimiento de Hadware</span>
+              </a>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.5.2</span>
+            </td>
+            <td>
+              <a name="task-18" style="white-space: nowrap; font-weight: bold; margin-left: 36px;" id="task-18">
+                <span>Integración en Prototipo</span>
+              </a>
+            </td>
+            <td>
+              <span style="white-space: nowrap; font-weight: bold;">2d </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.5.2.1</span>
+            </td>
+            <td>
+              <a name="gantt-19" style="white-space: nowrap; margin-left: 54px;" id="gantt-19">
+                <span>Diagrama de Clase</span>
+              </a>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.5.2.2</span>
+            </td>
+            <td>
+              <a name="gantt-20" style="white-space: nowrap; margin-left: 54px;" id="gantt-20">
+                <span>Agregar shield en circuito</span>
+              </a>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.6</span>
+            </td>
+            <td>
+              <a name="task-21" style="white-space: nowrap; font-weight: bold; margin-left: 18px;" id="task-21">
+                <span>Transferencia Datos</span>
+              </a>
+            </td>
+            <td>
+              <span style="white-space: nowrap; font-weight: bold;">6d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.6.1</span>
+            </td>
+            <td>
+              <a name="gantt-22" style="white-space: nowrap; margin-left: 36px;" id="gantt-22">
+                <span>Esquema de Pruebas</span>
+              </a>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.6.2</span>
+            </td>
+            <td>
+              <a name="gantt-23" style="white-space: nowrap; margin-left: 36px;" id="gantt-23">
+                <span>Ejecución de Pruebas</span>
+              </a>
+            </td>
+            <td>
+              <span>2d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.6.3</span>
+            </td>
+            <td>
+              <a name="gantt-24" style="white-space: nowrap; margin-left: 36px;" id="gantt-24">
+                <span>Recopilación información Pruebas</span>
+              </a>
+            </td>
+            <td>
+              <span>2d </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.6.4</span>
+            </td>
+            <td>
+              <a name="gantt-25" style="white-space: nowrap; margin-left: 36px;" id="gantt-25">
+                <span>Retroalimentación</span>
+              </a>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.7</span>
+            </td>
+            <td>
+              <a name="gantt-26" style="white-space: nowrap; margin-left: 18px;" id="gantt-26">
+                <span>Pruebas sobre sistema</span>
+              </a>
+            </td>
+            <td>
+              <span>2d 6h </span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <span>1.8</span>
+            </td>
+            <td>
+              <a name="gantt-27" style="white-space: nowrap; margin-left: 18px;" id="gantt-27">
+                <span>Pruebas de Trabajo en Prototipo 1</span>
+              </a>
+            </td>
+            <td>
+              <span>10d </span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <span>1.9</span>
+            </td>
+            <td>
+              <a name="gantt-28" style="white-space: nowrap; margin-left: 18px;" id="gantt-28">
+                <span>Construccion GUI</span>
+              </a>
+            </td>
+            <td>
+              <span>5d </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="gantt-chart">
+        <table cellspacing="0" cellpadding="0" border="1" style="table-layout: fixed;">
+          <tr class="header" align="left">
+            <th class="gantt-3day-header" colspan="3"></th>
+            <th class="gantt-week-header" align="center" colspan="7">Semana 6, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Semana 7, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Semana 8, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Semana 9, 2014</th>
+            <th class="gantt-week-header" align="center" colspan="7">Semana 10, 2014</th>
+            <th class="gantt-4day-header" colspan="4"></th>
+            <th></th>
+          </tr>
+          <tr class="header" align="left">
+            <th class="gantt-day-header" align="center">31</th>
+            <th class="gantt-day-header" align="center">1</th>
+            <th class="gantt-day-header" align="center">2</th>
+            <th class="gantt-day-header" align="center">3</th>
+            <th class="gantt-day-header" align="center">4</th>
+            <th class="gantt-day-header" align="center">5</th>
+            <th class="gantt-day-header" align="center">6</th>
+            <th class="gantt-day-header" align="center">7</th>
+            <th class="gantt-day-header" align="center">8</th>
+            <th class="gantt-day-header" align="center">9</th>
+            <th class="gantt-day-header" align="center">10</th>
+            <th class="gantt-day-header" align="center">11</th>
+            <th class="gantt-day-header" align="center">12</th>
+            <th class="gantt-day-header" align="center">13</th>
+            <th class="gantt-day-header" align="center">14</th>
+            <th class="gantt-day-header" align="center">15</th>
+            <th class="gantt-day-header" align="center">16</th>
+            <th class="gantt-day-header" align="center">17</th>
+            <th class="gantt-day-header" align="center">18</th>
+            <th class="gantt-day-header" align="center">19</th>
+            <th class="gantt-day-header" align="center">20</th>
+            <th class="gantt-day-header" align="center">21</th>
+            <th class="gantt-day-header" align="center">22</th>
+            <th class="gantt-day-header" align="center">23</th>
+            <th class="gantt-day-header" align="center">24</th>
+            <th class="gantt-day-header" align="center">25</th>
+            <th class="gantt-day-header" align="center">26</th>
+            <th class="gantt-day-header" align="center">27</th>
+            <th class="gantt-day-header" align="center">28</th>
+            <th class="gantt-day-header" align="center">1</th>
+            <th class="gantt-day-header" align="center">2</th>
+            <th class="gantt-day-header" align="center">3</th>
+            <th class="gantt-day-header" align="center">4</th>
+            <th class="gantt-day-header" align="center">5</th>
+            <th class="gantt-day-header" align="center">6</th>
+            <th class="gantt-day-header" align="center">7</th>
+            <th class="gantt-day-header" align="center">8</th>
+            <th class="gantt-day-header" align="center">9</th>
+            <th class="gantt-day-header" align="center">10</th>
+            <th class="gantt-day-header" align="center">11</th>
+            <th class="gantt-day-header" align="center">12</th>
+            <th class="gantt-day-header" align="center">13</th>
+            <th align="center"></th>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;"></div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;"></div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 66px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;">
+                  <div class="gantt-complete-done" style="width: 8px;"></div>
+                </div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[50], PC_1[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 66px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[50], PC_1[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 86px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[50], PC_1[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;"></div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 86px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[50], PC_1[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 106px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[50], PC_1[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;"></div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 126px;"></div>
+                <div class="gantt-complete-notdone" style="width: 88px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[17], PC_1[17]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;"></div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 206px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[50], PC_1[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 226px;"></div>
+                <div class="gantt-complete-notdone" style="width: 48px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[50], PC_1[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 226px;"></div>
+                <div class="gantt-complete-notdone" style="width: 48px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[50], PC_1[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 286px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M, PC_1</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;"></div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 366px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[17], A_U2_1[17], A_U1_1[17], A_M_1[17], Mat_Elec[17], PC_1[17]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;"></div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 386px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[50], PC_1[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 406px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[20], A_U1_1[20], A_M_1[20], Mat_Elec[20], PC_1[20]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;"></div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 426px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[50], PC_1[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 486px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[22], A_U2_1[22], A_U1_1[22], A_M_1[22], SD1[22], SD2[22], S_T1[22], Mat_Elec[22], PC_1[22]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 486px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M, PC_1</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 526px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[50], PC_1[50]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 546px;"></div>
+                <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[19], A_U2_1[19], A_U1_1[19], A_M_1[19], SD1[19], SD2[19], S_T1[19], S_F1[19], S_T2[19], S_H1[19], S_R[19], S_B[19], S_N1[19], Mat_Elec[19], PC_1[19]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 6px;"></div>
+                <div class="gantt-complete-notdone" style="width: 268px;">
+                  <div class="gantt-complete-done" style="width: 8px;"></div>
+                </div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[7], A_U2_1[7], A_U1_1[7], A_M_1[7], SD1[7], SD2[7], S_T1[7], S_F1[7], S_T2[7], S_H1[7], S_R[7], S_B[7], S_N1[7], Mat_Elec[7], PC_1[7]</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="even">
+            <td colspan="43">
+              <div style="width: 841px; white-space: nowrap;">
+                <div class="gantt-empty-begin" style="width: 566px;"></div>
+                <div class="gantt-complete-notdone" style="width: 128px;"></div>
+                <div class="gantt-empty-end"></div>
+                <div class="gantt-resources">G_M[50], PC_1[50]</div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div class="tasklist">
+      <h2>
+        <a name="tasks" id="tasks">Tareas</a>
+      </h2>
+      <div class="tasklist-table">
+        <table cellspacing="0" cellpadding="0" border="1">
+          <tr class="header" align="left">
+            <th>
+              <span>WBS</span>
+            </th>
+            <th>
+              <span>Nombre</span>
+            </th>
+            <th>
+              <span>Inicio</span>
+            </th>
+            <th>
+              <span>Fin</span>
+            </th>
+            <th>
+              <span>Trabajo</span>
+            </th>
+            <th>
+              <span>Terminado</span>
+            </th>
+            <th>
+              <span>Coste</span>
+            </th>
+            <th>
+              <span>Asignado a</span>
+            </th>
+          </tr>
+          <tr class="odd" style="&#10;            font-weight: bold;&#10;          ">
+            <td>
+              <span>1</span>
+            </td>
+            <td>
+              <a name="task1" style="margin-left: 0px" id="task1">
+                <span>Prototipo 2 Etapa</span>
+              </a>
+            </td>
+            <td>
+              <span>Jan 31</span>
+            </td>
+            <td>
+              <span>Mar 6</span>
+            </td>
+            <td>
+              <span>41d 6h </span>
+            </td>
+            <td></td>
+            <td>
+              <span></span>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="even" style="&#10;            font-weight: bold;&#10;          ">
+            <td>
+              <span>1.1</span>
+            </td>
+            <td>
+              <a name="task2" style="margin-left: 18px" id="task2">
+                <span>Construccion Base de Datos </span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 3</span>
+            </td>
+            <td>
+              <span>Feb 4</span>
+            </td>
+            <td>
+              <span>3d </span>
+            </td>
+            <td></td>
+            <td>
+              <span></span>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>1.1.1</span>
+            </td>
+            <td>
+              <a name="task3" style="margin-left: 36px" id="task3">
+                <span>Esquema de Base de Datos</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 3</span>
+            </td>
+            <td>
+              <span>Feb 3</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td>
+              <span>100%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[50], PC_1[50]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>1.1.2</span>
+            </td>
+            <td>
+              <a name="task4" style="margin-left: 36px" id="task4">
+                <span>Codificación Base de Datos</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 3</span>
+            </td>
+            <td>
+              <span>Feb 3</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td>
+              <span>10%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[50], PC_1[50]</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>1.1.3</span>
+            </td>
+            <td>
+              <a name="task5" style="margin-left: 36px" id="task5">
+                <span>Pruebas Base de Datos</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 4</span>
+            </td>
+            <td>
+              <span>Feb 4</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[50], PC_1[50]</td>
+          </tr>
+          <tr class="even" style="&#10;            font-weight: bold;&#10;          ">
+            <td>
+              <span>1.2</span>
+            </td>
+            <td>
+              <a name="task6" style="margin-left: 18px" id="task6">
+                <span>Analisis Servicio Web</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 4</span>
+            </td>
+            <td>
+              <span>Feb 5</span>
+            </td>
+            <td>
+              <span>2d </span>
+            </td>
+            <td></td>
+            <td>
+              <span></span>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>1.2.1</span>
+            </td>
+            <td>
+              <a name="task7" style="margin-left: 36px" id="task7">
+                <span>Determinar Metodología de Trabajo</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 4</span>
+            </td>
+            <td>
+              <span>Feb 4</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[50], PC_1[50]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>1.2.2</span>
+            </td>
+            <td>
+              <a name="task8" style="margin-left: 36px" id="task8">
+                <span>Esquema de Trabajo Servicio Web</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 5</span>
+            </td>
+            <td>
+              <span>Feb 5</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[50], PC_1[50]</td>
+          </tr>
+          <tr class="odd" style="&#10;            font-weight: bold;&#10;          ">
+            <td>
+              <span>1.3</span>
+            </td>
+            <td>
+              <a name="task9" style="margin-left: 18px" id="task9">
+                <span>Construccion Servicio Web</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 6</span>
+            </td>
+            <td>
+              <span>Feb 10</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td></td>
+            <td>
+              <span></span>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>1.3.1</span>
+            </td>
+            <td>
+              <a name="task10" style="margin-left: 36px" id="task10">
+                <span>Codificación Servicio Web</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 6</span>
+            </td>
+            <td>
+              <span>Feb 10</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[17], PC_1[17]</td>
+          </tr>
+          <tr class="odd" style="&#10;            font-weight: bold;&#10;          ">
+            <td>
+              <span>1.4</span>
+            </td>
+            <td>
+              <a name="task11" style="margin-left: 18px" id="task11">
+                <span>Prueba Transferencia de Datos</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 10</span>
+            </td>
+            <td>
+              <span>Feb 14</span>
+            </td>
+            <td>
+              <span>9d </span>
+            </td>
+            <td></td>
+            <td>
+              <span></span>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>1.4.1</span>
+            </td>
+            <td>
+              <a name="task12" style="margin-left: 36px" id="task12">
+                <span>Esquema de Pruebas</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 10</span>
+            </td>
+            <td>
+              <span>Feb 10</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[50], PC_1[50]</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>1.4.2</span>
+            </td>
+            <td>
+              <a name="task13" style="margin-left: 36px" id="task13">
+                <span>Ejecución de Pruebas</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 11</span>
+            </td>
+            <td>
+              <span>Feb 13</span>
+            </td>
+            <td>
+              <span>3d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[50], PC_1[50]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>1.4.3</span>
+            </td>
+            <td>
+              <a name="task14" style="margin-left: 36px" id="task14">
+                <span>Recopilación información pruebas</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 11</span>
+            </td>
+            <td>
+              <span>Feb 13</span>
+            </td>
+            <td>
+              <span>3d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[50], PC_1[50]</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>1.4.4</span>
+            </td>
+            <td>
+              <a name="task15" style="margin-left: 36px" id="task15">
+                <span>Retroalimentación</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 14</span>
+            </td>
+            <td>
+              <span>Feb 14</span>
+            </td>
+            <td>
+              <span>2d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M, PC_1</td>
+          </tr>
+          <tr class="even" style="&#10;            font-weight: bold;&#10;          ">
+            <td>
+              <span>1.5</span>
+            </td>
+            <td>
+              <a name="task16" style="margin-left: 18px" id="task16">
+                <span>Analisis Shield Ethernet Arduino</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 18</span>
+            </td>
+            <td>
+              <span>Feb 20</span>
+            </td>
+            <td>
+              <span>3d </span>
+            </td>
+            <td></td>
+            <td>
+              <span></span>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>1.5.1</span>
+            </td>
+            <td>
+              <a name="task17" style="margin-left: 36px" id="task17">
+                <span>Reconocimiento de Hadware</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 18</span>
+            </td>
+            <td>
+              <span>Feb 18</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[17], A_U2_1[17], A_U1_1[17], A_M_1[17], Mat_Elec[17], PC_1[17]</td>
+          </tr>
+          <tr class="even" style="&#10;            font-weight: bold;&#10;          ">
+            <td>
+              <span>1.5.2</span>
+            </td>
+            <td>
+              <a name="task18" style="margin-left: 36px" id="task18">
+                <span>Integración en Prototipo</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 19</span>
+            </td>
+            <td>
+              <span>Feb 20</span>
+            </td>
+            <td>
+              <span>2d </span>
+            </td>
+            <td></td>
+            <td>
+              <span></span>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>1.5.2.1</span>
+            </td>
+            <td>
+              <a name="task19" style="margin-left: 54px" id="task19">
+                <span>Diagrama de Clase</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 19</span>
+            </td>
+            <td>
+              <span>Feb 19</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[50], PC_1[50]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>1.5.2.2</span>
+            </td>
+            <td>
+              <a name="task20" style="margin-left: 54px" id="task20">
+                <span>Agregar shield en circuito</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 20</span>
+            </td>
+            <td>
+              <span>Feb 20</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[20], A_U1_1[20], A_M_1[20], Mat_Elec[20], PC_1[20]</td>
+          </tr>
+          <tr class="odd" style="&#10;            font-weight: bold;&#10;          ">
+            <td>
+              <span>1.6</span>
+            </td>
+            <td>
+              <a name="task21" style="margin-left: 18px" id="task21">
+                <span>Transferencia Datos</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 21</span>
+            </td>
+            <td>
+              <span>Feb 26</span>
+            </td>
+            <td>
+              <span>6d </span>
+            </td>
+            <td></td>
+            <td>
+              <span></span>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>1.6.1</span>
+            </td>
+            <td>
+              <a name="task22" style="margin-left: 36px" id="task22">
+                <span>Esquema de Pruebas</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 21</span>
+            </td>
+            <td>
+              <span>Feb 21</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[50], PC_1[50]</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>1.6.2</span>
+            </td>
+            <td>
+              <a name="task23" style="margin-left: 36px" id="task23">
+                <span>Ejecución de Pruebas</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 24</span>
+            </td>
+            <td>
+              <span>Feb 24</span>
+            </td>
+            <td>
+              <span>2d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[22], A_U2_1[22], A_U1_1[22], A_M_1[22], SD1[22], SD2[22], S_T1[22], Mat_Elec[22], PC_1[22]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>1.6.3</span>
+            </td>
+            <td>
+              <a name="task24" style="margin-left: 36px" id="task24">
+                <span>Recopilación información Pruebas</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 24</span>
+            </td>
+            <td>
+              <span>Feb 24</span>
+            </td>
+            <td>
+              <span>2d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M, PC_1</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>1.6.4</span>
+            </td>
+            <td>
+              <a name="task25" style="margin-left: 36px" id="task25">
+                <span>Retroalimentación</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 26</span>
+            </td>
+            <td>
+              <span>Feb 26</span>
+            </td>
+            <td>
+              <span>1d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[50], PC_1[50]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>1.7</span>
+            </td>
+            <td>
+              <a name="task26" style="margin-left: 18px" id="task26">
+                <span>Pruebas sobre sistema</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 27</span>
+            </td>
+            <td>
+              <span>Feb 27</span>
+            </td>
+            <td>
+              <span>2d 6h </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[19], A_U2_1[19], A_U1_1[19], A_M_1[19], SD1[19], SD2[19], S_T1[19], S_F1[19], S_T2[19], S_H1[19], S_R[19], S_B[19], S_N1[19], Mat_Elec[19], PC_1[19]</td>
+          </tr>
+          <tr class="odd" style="">
+            <td>
+              <span>1.8</span>
+            </td>
+            <td>
+              <a name="task27" style="margin-left: 18px" id="task27">
+                <span>Pruebas de Trabajo en Prototipo 1</span>
+              </a>
+            </td>
+            <td>
+              <span>Jan 31</span>
+            </td>
+            <td>
+              <span>Feb 13</span>
+            </td>
+            <td>
+              <span>10d </span>
+            </td>
+            <td>
+              <span>3%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[7], A_U2_1[7], A_U1_1[7], A_M_1[7], SD1[7], SD2[7], S_T1[7], S_F1[7], S_T2[7], S_H1[7], S_R[7], S_B[7], S_N1[7], Mat_Elec[7], PC_1[7]</td>
+          </tr>
+          <tr class="even" style="">
+            <td>
+              <span>1.9</span>
+            </td>
+            <td>
+              <a name="task28" style="margin-left: 18px" id="task28">
+                <span>Construccion GUI</span>
+              </a>
+            </td>
+            <td>
+              <span>Feb 28</span>
+            </td>
+            <td>
+              <span>Mar 6</span>
+            </td>
+            <td>
+              <span>5d </span>
+            </td>
+            <td>
+              <span>0%
+              </span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>G_M[50], PC_1[50]</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div class="resourcelist">
+      <h2>
+        <a name="resources" id="resources">Recursos</a>
+      </h2>
+      <div class="resourcelist-table">
+        <table cellspacing="0" cellpadding="0" border="1" width="100%">
+          <tr class="header" align="left">
+            <th>
+              <span>Nombre</span>
+            </th>
+            <th>
+              <span>Nombre corto</span>
+            </th>
+            <th>
+              <span>Tipo</span>
+            </th>
+            <th>
+              <span>Grupo</span>
+            </th>
+            <th>
+              <span>Correo-e</span>
+            </th>
+            <th>
+              <span>Coste</span>
+            </th>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-1" id="res-1">
+                <span>Gonzalo Muñoz</span>
+              </a>
+            </td>
+            <td>
+              <span>G_M</span>
+            </td>
+            <td>
+              <span>Trabajo</span>
+            </td>
+            <td>
+              <span>Gonzalo Muñoz</span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <a name="res-4" id="res-4">
+                <span>Arduino mega</span>
+              </a>
+            </td>
+            <td>
+              <span>A_M_1</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-2" id="res-2">
+                <span>Arduino uno</span>
+              </a>
+            </td>
+            <td>
+              <span>A_U2_1</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <a name="res-3" id="res-3">
+                <span>Arduino uno</span>
+              </a>
+            </td>
+            <td>
+              <span>A_U1_1</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-12" id="res-12">
+                <span>Bomba</span>
+              </a>
+            </td>
+            <td>
+              <span>S_B</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <a name="res-14" id="res-14">
+                <span>Materiales Electricos</span>
+              </a>
+            </td>
+            <td>
+              <span>Mat_Elec</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-15" id="res-15">
+                <span>Notebook Probook</span>
+              </a>
+            </td>
+            <td>
+              <span>PC_1</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <a name="res-11" id="res-11">
+                <span>Rele</span>
+              </a>
+            </td>
+            <td>
+              <span>S_R</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-8" id="res-8">
+                <span>Sensor Flujo</span>
+              </a>
+            </td>
+            <td>
+              <span>S_F1</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <a name="res-10" id="res-10">
+                <span>Sensor Humedad</span>
+              </a>
+            </td>
+            <td>
+              <span>S_H1</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-13" id="res-13">
+                <span>Sensor Nivel</span>
+              </a>
+            </td>
+            <td>
+              <span>S_N1</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <a name="res-7" id="res-7">
+                <span>Sensor Temperatura</span>
+              </a>
+            </td>
+            <td>
+              <span>S_T1</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-9" id="res-9">
+                <span>Sensor Temperatura</span>
+              </a>
+            </td>
+            <td>
+              <span>S_T2</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="even">
+            <td>
+              <a name="res-6" id="res-6">
+                <span>Shield SD</span>
+              </a>
+            </td>
+            <td>
+              <span>SD2</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+          <tr class="odd">
+            <td>
+              <a name="res-5" id="res-5">
+                <span>Shield SD+RTC</span>
+              </a>
+            </td>
+            <td>
+              <span>SD1</span>
+            </td>
+            <td>
+              <span>Material</span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <a href="mailto:">
+                <span></span>
+              </a>
+            </td>
+            <td align="right">
+              <span>0</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="footer">
+      <div>Este archivo fue generado por 
+      <a href="http://live.gnome.org/Planner/" style="text-decoration: underline;">Planner</a></div>
+    </div>
+  </body>
+</html>
